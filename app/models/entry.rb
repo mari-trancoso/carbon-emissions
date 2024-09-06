@@ -3,6 +3,12 @@ class Entry < ApplicationRecord
 
   before_save :calculate_emissions
 
+  validates :user_name, :quantity, :start_date, :end_date, :emission_source_id, presence: true
+
+  def duration
+    (end_date - start_date).to_i
+  end
+
   private
 
   def calculate_emissions
@@ -13,9 +19,5 @@ class Entry < ApplicationRecord
       self.co2_bio = quantity*1451.49378
       self.co2_eq = self.co2_bio/1000
     end
-  end
-
-  def carbon_emission
-    self.co2_eq
   end
 end

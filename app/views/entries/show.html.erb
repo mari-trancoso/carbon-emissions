@@ -1,41 +1,51 @@
-<h1>Entry Details</h1>
+<div class="p-8 flex flex-col justify-center space-y-2 space-x-6">
+  <div>
+    <h1>Hi <%= @entry.user_name %></h1>
+  </div>
 
-<p>
-  <strong>Emission Source:</strong>
-  <%= @entry.emission_source.name %>
-</p>
+  <div class="space-y-2">
+    <h2>You have emitted these quantities by using <%= @entry.quantity %> of <%= @entry.emission_source.name %> for <%= @entry.duration %> days:</h2>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @entry.quantity %>
-</p>
+    <p>
+      <% if @entry.emission_source_id == 1 %>
+        <strong>CO2 Emissions (L):</strong>
+      <% else %>
+        <strong>CO2 Emissions (ton):</strong>
+      <% end %>
+      <%= @entry.co2 %>
+    </p>
 
-<p>
-  <strong>Unit:</strong>
-  <%= @entry.emission_source.unit %>
-</p>
+    <p>
+      <% if @entry.emission_source_id == 1 %>
+        <strong>CH4 Emissions (L):</strong>
+      <% else %>
+        <strong>CH4 Emissions (ton):</strong>
+      <% end %>
+      <%= @entry.ch4 %>
+    </p>
 
-<p>
-  <strong>CO2 Emissions (kg):</strong>
-  <%= @entry.co2 %>
-</p>
+    <p>
+      <% if @entry.emission_source_id == 1 %>
+        <strong>N2O Emissions (L):</strong>
+      <% else %>
+        <strong>N2O Emissions (ton):</strong>
+      <% end %>
+      <%= @entry.n2o %>
+    </p>
 
-<p>
-  <strong>CH4 Emissions (kg):</strong>
-  <%= @entry.ch4 %>
-</p>
+    <p>
+      <% if @entry.emission_source_id == 1 %>
+        <strong>CO2_bio (L):</strong>
+      <% else %>
+        <strong>CO2_bio (ton):</strong>
+      <% end %>
+      <%= @entry.co2_bio %>
+    </p>
 
-<p>
-  <strong>N2O Emissions (kg):</strong>
-  <%= @entry.n2o %>
-</p>
+    <h2 class="text-xl"><strong>Total emissions are: <%= number_with_precision(@entry.co2_eq, precision: 2) %> tons</strong></h2>
+  </div>
 
-<p>
-  <strong>CO2_eq (kg):</strong>
-  <%= @entry.co2_eq %>
-</p>
-
-<p>
-  <strong>CO2_bio (kg):</strong>
-  <%= @entry.co2_bio %>
-</p>
+  <div class="w-fit px-4 py-2 rounded bg-green-500 text-white h-fit">
+    <%= link_to "Calculate other emissions", root_path %>
+  </div>
+</div>

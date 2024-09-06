@@ -1,33 +1,35 @@
-<h1>New Entry</h1>
+<div class="p-8 flex flex-col justify-center">
+  <h1 class="text-2xl py-8">Do you want to know how much carbon you emit?</h1>
 
-<%= form_with(model: @entry, local: true, data:{controller: "unit"}) do |form| %>
-  <div>
-    <%= form.label :user_name %>
-    <%= form.text_field :user_name %>
-  </div>
+  <%= form_with(model: @entry, local: true, data:{controller: "unit"}, class:"space-y-2 text-center") do |form| %>
+    <div>
+      <%= form.label :user_name, "Please enter your name", required: true %>
+      <%= form.text_field :user_name %>
+    </div>
 
-  <div>
-    <%= form.label :emission_source_id %>
-     <%= form.collection_select :emission_source_id, @emission_sources, :id, :name, { prompt: 'Select Emission Source' }, { data: { unit_target: "emissionSource", action: "change->unit#setEmissionSourceUnit" } } %>
-  </div>
+    <div>
+      <%= form.label :emission_source_id, "Choose your emission source" %>
+      <%= form.collection_select :emission_source_id, @emission_sources, :id, :name, { prompt: 'Select Emission Source' }, { data: { unit_target: "emissionSource", action: "change->unit#setEmissionSourceUnit" } } %>
+    </div>
 
-  <div>
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity %>
-    <span data-unit-target="unit"></span>
-  </div>
+    <div>
+      <%= form.label :quantity, "Enter the quantity consumed" %>
+      <%= form.number_field :quantity %>
+      <span data-unit-target="unit"></span>
+    </div>
 
-  <div>
-    <%= form.label :start_date %>
-    <%= form.date_select :start_date %>
-  </div>
+    <div>
+      <%= form.label :start_date, "Choose the start date", required: true %>
+      <%= form.date_select :start_date %>
+    </div>
 
-  <div>
-    <%= form.label :end_date %>
-    <%= form.date_select :end_date %>
-  </div>
+    <div>
+      <%= form.label :end_date, "Choose the end date", required: true %>
+      <%= form.date_select :end_date %>
+    </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div class="text-xl w-fit px-4 py-2 rounded bg-green-500 text-white">
+      <%= form.submit "Calculate", class: "cursor-pointer" %>
+    </div>
+  <% end %>
+</div>
