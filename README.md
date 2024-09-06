@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Do you want to know how much carbon you emit?
 
-Things you may want to cover:
+Use this calculator to find out!
 
-* Ruby version
+Simply provide:
 
-* System dependencies
+* Emission source
+* Quantity
+* Dates (start and end)
 
-* Configuration
+## Pre-requisites
 
-* Database creation
+- Ruby 3.3.0
+- Rails 7.1.4
 
-* Database initialization
+## Setup the database
 
-* How to run the test suite
+```bash
+$ bin/rails db:prepare
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Running the application
 
-* Deployment instructions
-
-* ...
+```bash
+$ bin/dev
+```
