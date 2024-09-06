@@ -1,7 +1,7 @@
-<div class="p-8 flex flex-col justify-center">
+<div class="p-8 flex flex-col text-center">
   <h1 class="text-2xl py-8">Do you want to know how much carbon you emit?</h1>
 
-  <%= form_with(model: @entry, local: true, data:{controller: "unit"}, class:"space-y-2 text-center") do |form| %>
+  <%= form_with(model: @entry, local: true, data:{controller: "unit"}, class:"space-y-2") do |form| %>
     <div>
       <%= form.label :user_name, "Please enter your name", required: true %>
       <%= form.text_field :user_name %>
@@ -28,8 +28,8 @@
       <%= form.date_select :end_date %>
     </div>
 
-    <div class="text-xl w-fit px-4 py-2 rounded bg-green-500 text-white">
-      <%= form.submit "Calculate", class: "cursor-pointer" %>
+    <div class="text-xl text-white">
+      <%= form.submit "Calculate", class: "cursor-pointer px-4 py-2 rounded bg-green-500" %>
     </div>
   <% end %>
 </div>
