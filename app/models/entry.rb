@@ -16,8 +16,8 @@ class Entry < ApplicationRecord
       self.co2 = quantity*2.2564697
       self.co2_eq = self.co2/1000
     else
-      self.co2_bio = quantity*1451.49378
-      self.co2_eq = self.co2_bio
+      self.co2_bio = quantity*2.2564697
+      self.co2_eq = self.co2
     end
   end
 end

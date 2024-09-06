@@ -10,6 +10,23 @@ Simply provide:
 * Quantity
 * Dates (start and end)
 
+## Pre-requisites
+
+- Ruby 3.3.0
+- Rails 7.1.4
+
+## Setup the database
+
+```bash
+$ bin/rails db:prepare
+```
+
+## Running the application
+
+```bash
+$ bin/dev
+```
+
 ## Decisions
 
 ### Database
@@ -28,19 +45,15 @@ For the total CO2 emission calculations, I used these models as a basis (for bot
 
 So, for the final calculation: (total CO2 previously calculated * 1) + (total CH4 previously calculated * 28) + (total N2O previously calculated * 265)
 
-## Pre-requisites
+### Results
+The results are stored separately in my entries table:
 
-- Ruby 3.3.0
-- Rails 7.1.4
-
-## Setup the database
-
-```bash
-$ bin/rails db:prepare
-```
-
-## Running the application
-
-```bash
-$ bin/dev
-```
+- user_name
+- emission_source_id: belongs_to association
+- co2
+- co2_bio
+- ch4
+- n2o
+- co2_eq
+- start_date
+- end_date
