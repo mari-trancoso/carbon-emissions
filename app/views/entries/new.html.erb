@@ -1,0 +1,33 @@
+<h1>New Entry</h1>
+
+<%= form_with(model: @entry, local: true, data:{controller: "unit"}) do |form| %>
+  <div>
+    <%= form.label :user_name %>
+    <%= form.text_field :user_name %>
+  </div>
+
+  <div>
+    <%= form.label :emission_source_id %>
+     <%= form.collection_select :emission_source_id, @emission_sources, :id, :name, { prompt: 'Select Emission Source' }, { data: { unit_target: "emissionSource", action: "change->unit#setEmissionSourceUnit" } } %>
+  </div>
+
+  <div>
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity %>
+    <span data-unit-target="unit"></span>
+  </div>
+
+  <div>
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date %>
+  </div>
+
+  <div>
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

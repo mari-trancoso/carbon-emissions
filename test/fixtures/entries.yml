@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  emission_source: one
+  quantity: 1.5
+  unit: MyString
+  start_date: 2024-09-06
+  end_date: 2024-09-06
+  co2: 1.5
+  ch4: 1.5
+  n2o: 1.5
+  co2_eq: 1.5
+  co2_bio: 1.5
+
+two:
+  emission_source: two
+  quantity: 1.5
+  unit: MyString
+  start_date: 2024-09-06
+  end_date: 2024-09-06
+  co2: 1.5
+  ch4: 1.5
+  n2o: 1.5
+  co2_eq: 1.5
+  co2_bio: 1.5
