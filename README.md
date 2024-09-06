@@ -1,4 +1,4 @@
-# README
+# CARBON EMISSIONS CALCULATOR
 
 Do you want to know how much carbon you emit?
 
