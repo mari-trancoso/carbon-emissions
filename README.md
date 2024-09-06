@@ -18,7 +18,15 @@ I choose to have only to models, one for `EmissionSource` and other `Entry`
 - Entry: is the model that will have the results of the emissions, based in the emission source
 
 ### Calculation
-For the calculation of the emissions of CO2 I used 
+For the total CO2 emission calculations, I used these models as a basis (for both cases, I assumed the same values for every year):
+
+- For aviation gasoline emissions:
+ Liters: CO2 => 2.2564697, CH4 => 0, N2O => 0, CO2_eq => 0, CO2_bio => 0
+
+- For commercial firewood emissions:
+ Tons: CO2 => 0, CH4 => 0, N2O => 0, CO2_eq => 0, CO2_bio => 1451.49378
+
+So, for the final calculation: (total CO2 previously calculated * 1) + (total CH4 previously calculated * 28) + (total N2O previously calculated * 265)
 
 ## Pre-requisites
 
