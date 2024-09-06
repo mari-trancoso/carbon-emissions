@@ -30,9 +30,9 @@ $ bin/dev
 ## Decisions
 
 ### Database
-I choose to have only to models, one for `EmissionSource` and other `Entry`
-- Emission Source: is a databse for the user choose the options for emission source
-- Entry: is the model that will have the results of the emissions, based in the emission source
+I chose to use only two models, one for `EmissionSource` and other for `Entry`
+- Emission Source: this model contains the options for emission sources that users can choose from.
+- Entry: this model stores the results of the emissions, based on the selected emission source.
 
 ### Calculation
 For the total CO2 emission calculations, I used these models as a basis (for both cases, I assumed the same values for every year):
